@@ -71,6 +71,7 @@ public class DlgConsultaRetiro extends JDialog implements ActionListener {
 		getContentPane().add(scrollPane);
 		
 		txtResultado = new JTextArea();
+		txtResultado.setEditable(false);
 		txtResultado.setFont(new Font("Monospaced", Font.BOLD, 13));
 		scrollPane.setViewportView(txtResultado);
 		

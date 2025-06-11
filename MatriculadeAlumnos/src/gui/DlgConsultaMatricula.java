@@ -14,6 +14,8 @@ import javax.swing.JComboBox;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JPanel;
+import java.awt.Color;
 
 public class DlgConsultaMatricula extends JDialog implements ActionListener {
 	private static final long serialVersionUID=1L;
@@ -40,6 +42,7 @@ public class DlgConsultaMatricula extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public DlgConsultaMatricula() {
+		setResizable(false);
 		setTitle("CONSULTA MATRICULA");
 		setBounds(100, 100, 499, 323);
 		getContentPane().setLayout(null);
@@ -71,8 +74,19 @@ public class DlgConsultaMatricula extends JDialog implements ActionListener {
 		getContentPane().add(scrollPane);
 		
 		txtResultado = new JTextArea();
+		txtResultado.setEditable(false);
 		txtResultado.setFont(new Font("Monospaced", Font.BOLD, 13));
 		scrollPane.setViewportView(txtResultado);
+		
+		panel = new JPanel();
+		panel.setBackground(new Color(128, 128, 255));
+		panel.setBounds(0, 0, 483, 120);
+		getContentPane().add(panel);
+		
+		panel_1 = new JPanel();
+		panel_1.setBackground(new Color(128, 255, 255));
+		panel_1.setBounds(0, 119, 483, 165);
+		getContentPane().add(panel_1);
 		
 		listarCboCodigo();
 	}
@@ -80,6 +94,8 @@ public class DlgConsultaMatricula extends JDialog implements ActionListener {
 	ArregloAlumnos aa = new ArregloAlumnos();
 	ArregloCursos ac = new ArregloCursos();
 	ArregloMatriculas am = new ArregloMatriculas();
+	private JPanel panel;
+	private JPanel panel_1;
 	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnConsultar) {

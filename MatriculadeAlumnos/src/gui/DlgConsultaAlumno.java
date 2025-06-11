@@ -14,6 +14,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JComboBox;
+import javax.swing.JPanel;
+import java.awt.Color;
 
 public class DlgConsultaAlumno extends JDialog implements ActionListener {
 	private static final long serialVersionUID=1L;
@@ -37,6 +39,7 @@ public class DlgConsultaAlumno extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public DlgConsultaAlumno() {
+		setResizable(false);
 		setTitle("CONSULTA ALUMNOS");
 		setBounds(100, 100, 500, 323);
 		getContentPane().setLayout(null);
@@ -62,12 +65,23 @@ public class DlgConsultaAlumno extends JDialog implements ActionListener {
 		getContentPane().add(scrollPane);
 		
 		txtResultado = new JTextArea();
+		txtResultado.setEditable(false);
 		txtResultado.setFont(new Font("Monospaced", Font.BOLD, 13));
 		scrollPane.setViewportView(txtResultado);
 		
 		cboCodigo = new JComboBox<Integer>();
 		cboCodigo.setBounds(142, 16, 94, 23);
 		getContentPane().add(cboCodigo);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(128, 128, 255));
+		panel.setBounds(0, 0, 484, 122);
+		getContentPane().add(panel);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(128, 255, 255));
+		panel_1.setBounds(0, 122, 484, 162);
+		getContentPane().add(panel_1);
 		
 		listarCboCodigo();
 	}

@@ -35,7 +35,7 @@ public class DlgReporteAMP extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public DlgReporteAMP() {
-		setTitle("ALUMNOS CON MATR\u00CDCULA PENDIENTE");
+		setTitle("ALUMNOS CON MATRÍCULA PENDIENTE");
 		setBounds(100, 100, 624, 592);
 		getContentPane().setLayout(null);
 		

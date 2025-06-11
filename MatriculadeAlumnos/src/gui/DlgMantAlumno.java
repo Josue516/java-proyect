@@ -182,6 +182,7 @@ public class DlgMantAlumno extends JDialog implements ItemListener, ActionListen
 		getContentPane().add(scrollPane);
 		
 		tblAlumno = new JTable();
+		tblAlumno.setRowSelectionAllowed(false);
 		tblAlumno.addMouseListener(this);
 		tblAlumno.setFillsViewportHeight(true);
 		scrollPane.setViewportView(tblAlumno);
@@ -464,7 +465,7 @@ public class DlgMantAlumno extends JDialog implements ItemListener, ActionListen
 		int valor = JOptionPane.showOptionDialog(null,
 				"¿Estas seguro de eliminar a este Alumno?\n"
 				+ aa.buscar(leerCodigo()).getNombres() + " " + aa.buscar(leerCodigo()).getApellidos(),
-				"Confirmar",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[] {"S�", "No"}, null);
+				"Confirmar",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[] {"Sí", "No"}, null);
 		return valor;
 	}
 	public void mouseClicked(MouseEvent e) {
