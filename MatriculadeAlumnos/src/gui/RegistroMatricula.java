@@ -22,7 +22,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
 
-public class DlgRegMatricula extends JDialog implements ItemListener, ActionListener, MouseListener {
+public class RegistroMatricula extends JDialog implements ItemListener, ActionListener, MouseListener {
 	private static final long serialVersionUID=1L;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
@@ -49,7 +49,7 @@ public class DlgRegMatricula extends JDialog implements ItemListener, ActionList
 	 */
 	public static void main(String[] args) {
 		try {
-			DlgRegMatricula dialog = new DlgRegMatricula();
+			RegistroMatricula dialog = new RegistroMatricula();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -60,7 +60,7 @@ public class DlgRegMatricula extends JDialog implements ItemListener, ActionList
 	/**
 	 * Create the dialog.
 	 */
-	public DlgRegMatricula() {
+	public RegistroMatricula() {
 		setTitle("REGISTRO DE MATRICULAS");
 		setBounds(100, 100, 850, 514);
 		getContentPane().setLayout(null);

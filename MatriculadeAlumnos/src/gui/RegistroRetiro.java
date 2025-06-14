@@ -22,7 +22,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
 
-public class DlgRegRetiro extends JDialog implements ItemListener, ActionListener, MouseListener {
+public class RegistroRetiro extends JDialog implements ItemListener, ActionListener, MouseListener {
 	private static final long serialVersionUID = 1L;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
@@ -51,7 +51,7 @@ public class DlgRegRetiro extends JDialog implements ItemListener, ActionListene
 	 */
 	public static void main(String[] args) {
 		try {
-			DlgRegRetiro dialog = new DlgRegRetiro();
+			RegistroRetiro dialog = new RegistroRetiro();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -62,7 +62,7 @@ public class DlgRegRetiro extends JDialog implements ItemListener, ActionListene
 	/**
 	 * Create the dialog.
 	 */
-	public DlgRegRetiro() {
+	public RegistroRetiro() {
 		setTitle("REGISTRO DE RETIROS");
 		setBounds(100, 100, 850, 514);
 		getContentPane().setLayout(null);

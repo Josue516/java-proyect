@@ -10,16 +10,14 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JComboBox;
 import java.awt.Font;
+import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JPanel;
-import java.awt.Color;
 
-public class DlgConsultaMatricula extends JDialog implements ActionListener {
+public class ConsultaRetiro extends JDialog implements ActionListener {
 	private static final long serialVersionUID=1L;
-	private JLabel lblNewLabel;
+	private JLabel lblNmeroDeRetiro;
 	private JComboBox<Integer> cboCodigo;
 	private JButton btnConsultar;
 	private JScrollPane scrollPane;
@@ -30,7 +28,7 @@ public class DlgConsultaMatricula extends JDialog implements ActionListener {
 	 */
 	public static void main(String[] args) {
 		try {
-			DlgConsultaMatricula dialog = new DlgConsultaMatricula();
+			ConsultaRetiro dialog = new ConsultaRetiro();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -41,16 +39,15 @@ public class DlgConsultaMatricula extends JDialog implements ActionListener {
 	/**
 	 * Create the dialog.
 	 */
-	public DlgConsultaMatricula() {
-		setResizable(false);
-		setTitle("CONSULTA MATRICULA");
-		setBounds(100, 100, 499, 323);
+	public ConsultaRetiro() {
+		setTitle("CONSULTA RETIRO");
+		setBounds(100, 100, 500, 323);
 		getContentPane().setLayout(null);
 		
-		lblNewLabel = new JLabel("Número de Matrícula :");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel.setBounds(10, 15, 143, 15);
-		getContentPane().add(lblNewLabel);
+		lblNmeroDeRetiro = new JLabel("N\u00FAmero de retiro:");
+		lblNmeroDeRetiro.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNmeroDeRetiro.setBounds(10, 15, 143, 15);
+		getContentPane().add(lblNmeroDeRetiro);
 		
 		//LOGO
 		ImageIcon icon = new ImageIcon(getClass().getResource("/imagenes/Logo.png")); // Ruta desde src
@@ -78,24 +75,14 @@ public class DlgConsultaMatricula extends JDialog implements ActionListener {
 		txtResultado.setFont(new Font("Monospaced", Font.BOLD, 13));
 		scrollPane.setViewportView(txtResultado);
 		
-		panel = new JPanel();
-		panel.setBackground(new Color(128, 128, 255));
-		panel.setBounds(0, 0, 483, 120);
-		getContentPane().add(panel);
-		
-		panel_1 = new JPanel();
-		panel_1.setBackground(new Color(128, 255, 255));
-		panel_1.setBounds(0, 119, 483, 165);
-		getContentPane().add(panel_1);
-		
 		listarCboCodigo();
 	}
+	
 	//declaracion global
 	ArregloAlumnos aa = new ArregloAlumnos();
 	ArregloCursos ac = new ArregloCursos();
 	ArregloMatriculas am = new ArregloMatriculas();
-	private JPanel panel;
-	private JPanel panel_1;
+	ArregloRetiros ar = new ArregloRetiros();
 	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnConsultar) {
@@ -109,43 +96,38 @@ public class DlgConsultaMatricula extends JDialog implements ActionListener {
 			cboCodigo.requestFocus();
 		}
 		catch (Exception error) {
-			imprimir("Seleccione un numero de matricula");
+			mensaje("Seleccione un n�mero de retiro");
 		}
 	}
-	
+		
 	void imprimir(){
 		imprimir("");
 	}
 	//metodo Listar
 	void listar() {
-		Matricula m = am.buscar(leerCodigo());
+		Retiro r = ar.buscar(leerCodigo());
+		Matricula m = am.buscar(r.getNumMatricula());
 		Alumno x = aa.buscar(m.getCodigoAlumno());
 		Curso c = ac.buscar(m.getCodigoCurso());
-		imprimir("CODIGO        : " + m.getNumeroMatricula());
-		switch(x.getEstado()) {
-		case 0: imprimir("ESTADO        : REGISTRADO");break;
-		case 1: imprimir("ESTADO        : MATRICULADO");break;
-		default:imprimir("ESTADO        : RETIRADO");
-		}
-		imprimir("-------------------------------------------------------");
-		imprimir("COD. ALUMNO   : " + x.getCodAlumno());
-		imprimir("NOMBRES       : " + x.getNombres());
-		imprimir("APELLIDOS     : " + x.getApellidos());
-		imprimir("DNI           : " + x.getDni());
-		imprimir("EDAD          : " + x.getEdad());
-		imprimir("CELULAR       : " + x.getCelular());
-		imprimir("-------------------------------------------------------");
-		imprimir("COD. CURSO    : " + c.getCodCurso());
-		imprimir("ASIGNATURA    : " + c.getAsignatura());
-		imprimir("CICLO         : " + nombreCiclo(c.getCiclo()));
-		imprimir("CREDITOS      : " + c.getCreditos());
-		imprimir("HORAS         : " + c.getHoras());
-		txtResultado.setCaretPosition(0);
+		imprimir("CODIGO         : " + r.getNumRetiro());
+		imprimir("NUM. MATR�CULA : " + m.getNumeroMatricula());
+		imprimir("");
+		imprimir("COD. ALUMNO    : " + x.getCodAlumno());
+		imprimir("NOMBRES        : " + x.getNombres());
+		imprimir("APELLIDOS      : " + x.getApellidos());
+		imprimir("DNI            : " + x.getDni());
+		imprimir("EDAD           : " + x.getEdad());
+		imprimir("CELULAR        : " + x.getCelular());
+		imprimir("");
+		imprimir("COD. CURSO     : " + c.getAsignatura());
+		imprimir("CICLO          : " + nombreCiclo(c.getCiclo()));
+		imprimir("CREDITOS       : " + c.getCreditos());
+		imprimir("HORAS          : " + c.getHoras());
 	}
 	void listarCboCodigo() {
 		cboCodigo.removeAllItems();
-		for (int i = 0; i < am.tamaño(); i++) {
-			cboCodigo.addItem(am.obtener(i).getNumeroMatricula());
+		for (int i = 0; i < ar.tamaño(); i++) {
+			cboCodigo.addItem(ar.obtener(i).getNumRetiro());
 		}
 		cboCodigo.setSelectedIndex(-1);
 	}

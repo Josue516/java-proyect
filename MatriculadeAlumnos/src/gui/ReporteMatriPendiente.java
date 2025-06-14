@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ScrollPaneConstants;
 
-public class DlgReporteAMP extends JDialog implements ActionListener {
+public class ReporteMatriPendiente extends JDialog implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private JButton btnListar;
 	private JTextArea txtResultado;
@@ -23,7 +23,7 @@ public class DlgReporteAMP extends JDialog implements ActionListener {
 	 */
 	public static void main(String[] args) {
 		try {
-			DlgReporteAMP dialog = new DlgReporteAMP();
+			ReporteMatriPendiente dialog = new ReporteMatriPendiente();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -34,7 +34,7 @@ public class DlgReporteAMP extends JDialog implements ActionListener {
 	/**
 	 * Create the dialog.
 	 */
-	public DlgReporteAMP() {
+	public ReporteMatriPendiente() {
 		setTitle("ALUMNOS CON MATRÍCULA PENDIENTE");
 		setBounds(100, 100, 624, 592);
 		getContentPane().setLayout(null);

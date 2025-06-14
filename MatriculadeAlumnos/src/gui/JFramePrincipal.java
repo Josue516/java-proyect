@@ -198,76 +198,76 @@ public class JFramePrincipal extends JFrame implements ActionListener {
 		if (valor == 0) System.exit(0);
 	}
 	protected void actionPerformedMntmMantAlumno(ActionEvent e) {
-		DlgMantAlumno mantAlumno = new DlgMantAlumno();
+		ManteAlumno mantAlumno = new ManteAlumno();
 		mantAlumno.setModal(true);
 		mantAlumno.setLocationRelativeTo(this);
 		mantAlumno.setVisible(true);
 	}
 	protected void actionPerformedMntmMantCurso(ActionEvent e) {
-		DlgMantCurso mantCurso = new DlgMantCurso();
+		ManteCursos mantCurso = new ManteCursos();
 		mantCurso.setModal(true);
 		mantCurso.setLocationRelativeTo(this);
 		mantCurso.setVisible(true);
 	}
 	
 	protected void actionPerformedMntmRegMatricula(ActionEvent e) {
-		DlgRegMatricula regMatricula = new DlgRegMatricula();
+		RegistroMatricula regMatricula = new RegistroMatricula();
 		regMatricula.setModal(true);
 		regMatricula.setLocationRelativeTo(this);
 		regMatricula.setVisible(true);
 	}
 	
 	protected void actionPerformedMntmRegRetiro(ActionEvent e) {
-		DlgRegRetiro regRetiro = new DlgRegRetiro();
+		RegistroRetiro regRetiro = new RegistroRetiro();
 		regRetiro.setModal(true);
 		regRetiro.setLocationRelativeTo(this);
 		regRetiro.setVisible(true);
 	}
 	
 	protected void actionPerformedMntmConsAlumno(ActionEvent e) {
-		DlgConsultaAlumno consultaAlumno = new DlgConsultaAlumno();
+		ConsultaAlumno consultaAlumno = new ConsultaAlumno();
 		consultaAlumno.setModal(true);
 		consultaAlumno.setLocationRelativeTo(this);
 		consultaAlumno.setVisible(true);
 	}
 	
 	protected void actionPerformedMntmConsCurso(ActionEvent e) {
-		DlgConsultaCurso consultaCurso = new DlgConsultaCurso();
+		ConsultaCurso consultaCurso = new ConsultaCurso();
 		consultaCurso.setModal(true);
 		consultaCurso.setLocationRelativeTo(this);
 		consultaCurso.setVisible(true);
 	}
 	
 	protected void actionPerformedMntmConsMatricula(ActionEvent e) {
-		DlgConsultaMatricula consultaMatricula = new DlgConsultaMatricula();
+		ConsultaMatricula consultaMatricula = new ConsultaMatricula();
 		consultaMatricula.setModal(true);
 		consultaMatricula.setLocationRelativeTo(this);
 		consultaMatricula.setVisible(true);
 	}
 	
 	protected void actionPerformedMntmConsRetiro(ActionEvent e) {
-		DlgConsultaRetiro consultaRetiro = new DlgConsultaRetiro();
+		ConsultaRetiro consultaRetiro = new ConsultaRetiro();
 		consultaRetiro.setModal(true);
 		consultaRetiro.setLocationRelativeTo(this);
 		consultaRetiro.setVisible(true);
 	}
 	
 	protected void actionPerformedMntmAlumMatPendiente(ActionEvent e) {
-		DlgReporteAMP reporteAMP = new DlgReporteAMP();
+		ReporteMatriPendiente reporteAMP = new ReporteMatriPendiente();
 		reporteAMP.setModal(true);
 		reporteAMP.setLocationRelativeTo(this);
 		reporteAMP.setVisible(true);
 	}
 	
 	protected void actionPerformedMntmAlumMatVigente(ActionEvent e) {
-		DlgReporteAMV reporteAMV = new DlgReporteAMV();
+		ReporteMatriVigen reporteAMV = new ReporteMatriVigen();
 		reporteAMV.setModal(true);
 		reporteAMV.setLocationRelativeTo(this);
 		reporteAMV.setVisible(true);
 	}
 	
 	protected void actionPerformedMntmAlumMatCurso(ActionEvent e) {
-		DlgReporteAMC reporteAMC = new DlgReporteAMC();
+		ReporteMatriCurso reporteAMC = new ReporteMatriCurso();
 		reporteAMC.setModal(true);
 		reporteAMC.setLocationRelativeTo(this);
 		reporteAMC.setVisible(true);

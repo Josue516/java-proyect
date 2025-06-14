@@ -24,7 +24,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
 
-public class DlgMantAlumno extends JDialog implements ItemListener, ActionListener, MouseListener {
+public class ManteAlumno extends JDialog implements ItemListener, ActionListener, MouseListener {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -56,7 +56,7 @@ public class DlgMantAlumno extends JDialog implements ItemListener, ActionListen
 	 */
 	public static void main(String[] args) {
 		try {
-			DlgMantAlumno dialog = new DlgMantAlumno();
+			ManteAlumno dialog = new ManteAlumno();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -67,7 +67,7 @@ public class DlgMantAlumno extends JDialog implements ItemListener, ActionListen
 	/**
 	 * Create the dialog.
 	 */
-	public DlgMantAlumno() {
+	public ManteAlumno() {
 		setTitle("MANTENIMIENTO DE ALUMNOS");
 		setBounds(100, 100, 700, 502);
 		getContentPane().setLayout(null);

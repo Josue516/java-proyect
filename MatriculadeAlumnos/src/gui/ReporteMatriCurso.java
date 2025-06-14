@@ -12,7 +12,7 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class DlgReporteAMC extends JDialog implements ActionListener {
+public class ReporteMatriCurso extends JDialog implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private JButton btnListar;
 	private JTextArea txtResultado;
@@ -22,7 +22,7 @@ public class DlgReporteAMC extends JDialog implements ActionListener {
 	 */
 	public static void main(String[] args) {
 		try {
-			DlgReporteAMC dialog = new DlgReporteAMC();
+			ReporteMatriCurso dialog = new ReporteMatriCurso();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -33,7 +33,7 @@ public class DlgReporteAMC extends JDialog implements ActionListener {
 	/**
 	 * Create the dialog.
 	 */
-	public DlgReporteAMC() {
+	public ReporteMatriCurso() {
 		setTitle("ALUMNOS MATRICULADOS POR CURSO");
 		setBounds(100, 100, 624, 592);
 		getContentPane().setLayout(null);

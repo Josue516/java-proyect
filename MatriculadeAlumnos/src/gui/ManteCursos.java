@@ -25,7 +25,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
 
-public class DlgMantCurso extends JDialog implements ActionListener, ItemListener, MouseListener {
+public class ManteCursos extends JDialog implements ActionListener, ItemListener, MouseListener {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -54,7 +54,7 @@ public class DlgMantCurso extends JDialog implements ActionListener, ItemListene
 	 */
 	public static void main(String[] args) {
 		try {
-			DlgMantCurso dialog = new DlgMantCurso();
+			ManteCursos dialog = new ManteCursos();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -65,7 +65,7 @@ public class DlgMantCurso extends JDialog implements ActionListener, ItemListene
 	/**
 	 * Create the dialog.
 	 */
-	public DlgMantCurso() {
+	public ManteCursos() {
 		setTitle("MANTENIMIENTO DE CURSOS");
 		setBounds(100, 100, 700, 450);
 		getContentPane().setLayout(null);

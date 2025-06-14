@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ScrollPaneConstants;
 
-public class DlgReporteAMV extends JDialog implements ActionListener {
+public class ReporteMatriVigen extends JDialog implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private JButton btnListar;
 	private JScrollPane scrollPane;
@@ -23,7 +23,7 @@ public class DlgReporteAMV extends JDialog implements ActionListener {
 	 */
 	public static void main(String[] args) {
 		try {
-			DlgReporteAMV dialog = new DlgReporteAMV();
+			ReporteMatriVigen dialog = new ReporteMatriVigen();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -34,7 +34,7 @@ public class DlgReporteAMV extends JDialog implements ActionListener {
 	/**
 	 * Create the dialog.
 	 */
-	public DlgReporteAMV() {
+	public ReporteMatriVigen() {
 		setTitle("ALUMNOS CON MATR\u00CDCULA VIGENTE");
 		setBounds(100, 100, 624, 592);
 		getContentPane().setLayout(null);
